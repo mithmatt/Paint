@@ -15,6 +15,8 @@ public class Paint {
 	static int colorToChange = -1;
 	static int setColor = -1;
 
+	static int r = -1, c = -1;
+
 	/**
 	 * Main method
 	 * 
@@ -46,11 +48,11 @@ public class Paint {
 	 */
 	public static void fill(int startX, int startY, int inputColor) {
 
-		int r = grid.length;
+		r = grid.length;
 		if (r == 0)
 			return;
 
-		int c = grid[0].length;
+		c = grid[0].length;
 		if (c == 0)
 			return;
 
@@ -76,10 +78,6 @@ public class Paint {
 	 *            X coordinate of the pixel
 	 */
 	private static void visit(int i, int j) {
-
-		int r = grid.length;
-		int c = grid[0].length;
-
 		grid[i][j] = setColor;
 		if (i - 1 >= 0 && grid[i - 1][j] == colorToChange)
 			visit(i - 1, j);
